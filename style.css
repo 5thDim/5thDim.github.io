@@ -1,0 +1,36 @@
+/* style.css */
+/* 1. 自定义配色（学术风格常用深蓝、灰色） */
+:root {
+    --primary: #2c3e50; /* 主色调改为深蓝灰 */
+    --primary-hover: #1a252f;
+}
+
+/* 2. 为导航栏添加底部阴影，增强层次感 */
+nav {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2rem;
+}
+
+/* 3. 调整文章段落和行距，提升可读性 */
+article {
+    line-height: 1.7;
+}
+
+/* 4. 为主页标题添加一点个性 */
+hgroup h1 {
+    background: linear-gradient(120deg, var(--primary), #3498db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 3rem;
+}
+
+/* 5. 响应式调整：在手机上减少边距 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    hgroup h1 {
+        font-size: 2.5rem;
+    }
+}
