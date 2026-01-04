@@ -1,0 +1,30 @@
+/* 设置整个页面的背景色和字体 */
+body {
+    background-color: #f0f8ff; /* 浅蓝色背景 */
+    font-family: 'Microsoft YaHei', sans-serif; /* 字体 */
+    margin: 40px; /* 页边距 */
+}
+
+/* 设置主标题的样式 */
+h1 {
+    color: #333366; /* 深蓝色文字 */
+    text-align: center; /* 居中 */
+    border-bottom: 2px solid #333366; /* 底部边框 */
+    padding-bottom: 10px;
+}
+
+/* 设置段落样式 */
+p {
+    color: #555; /* 深灰色文字 */
+    line-height: 1.6; /* 行高 */
+}
+
+/* 设置链接样式 */
+a {
+    color: #ff6600; /* 橙色 */
+    text-decoration: none; /* 去掉下划线 */
+}
+a:hover { /* 鼠标悬停时的效果 */
+    color: #ff3300;
+    text-decoration: underline;
+}
