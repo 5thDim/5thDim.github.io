@@ -1,2 +1,2 @@
 # 5thDim.github.io
-My personal site (test)
+This is a test for my personal site.
