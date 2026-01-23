@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | 你的网站名</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
+<body>
+    <nav class="container">
+        <ul>
+            <li><strong><a href="{{ '/' | relative_url }}" style="text-decoration: none;">你的名字</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="{{ '/' | relative_url }}">主页</a></li>
+            <li><a href="{{ '/about' | relative_url }}">关于</a></li>
+            <li><a href="{{ '/blog' | relative_url }}">博客</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        {{ content }} <!-- 所有页面的独特内容会注入到这里 -->
+    </main>
+
+    <footer class="container">
+        <small>© {{ 'now' | date: "%Y" }} 你的名字. 使用 Jekyll 构建。</small>
+    </footer>
+</body>
+</html>
