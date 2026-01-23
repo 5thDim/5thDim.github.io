@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | 你的网站名</title>
+    <title>{{ page.title }} | 5thDim</title>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
     <nav class="container">
         <ul>
-            <li><strong><a href="{{ '/' | relative_url }}" style="text-decoration: none;">你的名字</a></strong></li>
+            <li><strong><a href="{{ '/' | relative_url }}" style="text-decoration: none;">5thDim</a></strong></li>
         </ul>
         <ul>
             <li><a href="{{ '/' | relative_url }}">主页</a></li>
             <li><a href="{{ '/about' | relative_url }}">关于</a></li>
             <li><a href="{{ '/blog' | relative_url }}">博客</a></li>
+             <li><a href="{{ '/notes' | relative_url }}">笔记</a></li>
         </ul>
     </nav>
 
@@ -24,7 +25,11 @@
     </main>
 
     <footer class="container">
-        <small>© {{ 'now' | date: "%Y" }} 你的名字. 使用 Jekyll 构建。</small>
+        <small>
+            © 2026 Jingjie Ding. 基于 <a href="https://pages.github.com" target="_blank">GitHub Pages</a> 构建。
+            联系邮箱：<a href="dingjj22@mails .tsinghua.edu.cn">dingjj22@mails .tsinghua.edu.cn</a>
+        <small>
+            © 使用 Jekyll 构建。</small>
     </footer>
 </body>
 </html>
