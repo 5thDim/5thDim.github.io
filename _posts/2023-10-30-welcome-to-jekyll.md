@@ -1,9 +1,10 @@
 ---
-layout: default
-title:  "欢迎来到 Jekyll 博客！"
-date:   2023-10-30 15:00:00 +0800
-categories: jekyll update
+layout: post
+title: "欢迎来到 Jekyll 博客！"
+date: 2023-10-30 15:00:00 +0800
+categories: [jekyll, update]
 ---
+
 ## 这是我的第一篇 Jekyll 博客
 
 你可以用 Markdown 轻松写作。比如：

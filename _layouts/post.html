@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <p class="eyebrow">研究与思考</p>
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%-m月%-d日" }}</time>
+      {% if page.categories.size > 0 %}
+        <span aria-hidden="true">·</span>
+        <span>{{ page.categories | join: " · " }}</span>
+      {% endif %}
+    </p>
+  </header>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <a href="{{ '/blog/' | relative_url }}">← 返回所有文章</a>
+  </footer>
+</article>

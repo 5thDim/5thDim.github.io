@@ -1,23 +1,44 @@
 ---
 layout: default
 title: 主页
+description: Jingjie Ding 的个人学术主页，关注高能理论物理。
 ---
-<main class="container">
-    <section>
-        <hgroup>
-            <h1>你好，我是 5thDim </h1>
-            <h2>清华大学本科四年级</h2>
-        </hgroup>
-        <p>这里是我的学术空间。我主要从事高能物理理论方面的研究。</p>
-        <p>欢迎你通过导航栏，了解更多关于我的信息、阅读我的博客文章或研究笔记。</p>
-    </section>
+<section class="hero">
+  <p class="eyebrow">高能理论物理 · 学习与研究</p>
+  <h1>你好，我是 <span>5thDim</span></h1>
+  <p class="hero-subtitle">清华大学本科四年级学生。这里记录我的研究兴趣、物理笔记，以及对场论相关问题的思考。</p>
+  <div class="hero-actions">
+    <a href="{{ '/blog/' | relative_url }}" role="button">阅读文章</a>
+    <a href="{{ '/about/' | relative_url }}" role="button" class="secondary outline">了解更多</a>
+  </div>
+</section>
 
-    <section>
-        <h3>最新动态</h3>
-        <ul>
-            <li>📝 <strong>[日期]</strong> 更新了关于 [某个主题] 的研究笔记。</li>
-            <li>🎤 <strong>[日期]</strong> 在 [会议名称] 上做了口头报告。</li>
-            <li>📄 <strong>[日期]</strong> 论文《论文标题》被 [期刊名称] 接收。</li>
-        </ul>
-    </section>
-</main>
+<section class="home-section" aria-labelledby="latest-heading">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Latest writing</p>
+      <h2 id="latest-heading">最近文章</h2>
+    </div>
+    <a href="{{ '/blog/' | relative_url }}">查看全部 →</a>
+  </div>
+
+  {% if site.posts.size > 0 %}
+  <div class="post-grid">
+    {% for post in site.posts limit:3 %}
+    <article class="post-card">
+      <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y年%-m月%-d日" }}</time></p>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt | strip_html | truncatewords: 26 }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-state">文章正在准备中。</p>
+  {% endif %}
+</section>
+
+<section class="home-section research-intro" aria-labelledby="research-heading">
+  <p class="eyebrow">Research interests</p>
+  <h2 id="research-heading">关注的问题</h2>
+  <p>我主要关注高能理论物理，以及量子场论中的非微扰现象。本站会逐步整理相关的学习笔记和研究思考。</p>
+</section>

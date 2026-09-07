@@ -1,33 +1,46 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | 5thDim</title>
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
+    <meta name="author" content="{{ site.author }}">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    {% if page.math %}
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    {% endif %}
 </head>
 <body>
-    <nav class="container">
-        <ul>
-            <li><strong><a href="{{ '/' | relative_url }}" style="text-decoration: none;">5thDim</a></strong></li>
-        </ul>
-        <ul>
-            <li><a href="{{ '/' | relative_url }}">主页</a></li>
-            <li><a href="{{ '/about' | relative_url }}">关于</a></li>
-            <li><a href="{{ '/blog' | relative_url }}">博客</a></li>
-             <li><a href="{{ '/notes' | relative_url }}">笔记</a></li>
-        </ul>
-    </nav>
+    <header class="site-header">
+        <nav class="container" aria-label="主导航">
+            <ul>
+                <li><a class="site-name" href="{{ '/' | relative_url }}">5thDim</a></li>
+            </ul>
+            <ul>
+                <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>主页</a></li>
+                <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>关于</a></li>
+                <li><a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.layout == 'post' %} aria-current="page"{% endif %}>博客</a></li>
+                <li><a href="{{ '/notes/' | relative_url }}"{% if page.url == '/notes/' %} aria-current="page"{% endif %}>笔记</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main class="container">
-        {{ content }} <!-- 所有页面的独特内容会注入到这里 -->
+    <main id="content" class="container page-content">
+        {{ content }}
     </main>
 
-    <footer class="container">
-        <small>
-            © 2026 Jingjie Ding. 基于 <a href="https://pages.github.com" target="_blank">GitHub Pages</a> 构建。
-            联系邮箱：<a href="dingjj22@mails .tsinghua.edu.cn">dingjj22@mails .tsinghua.edu.cn</a> </small>
+    <footer class="container site-footer">
+        <small>© {{ 'now' | date: '%Y' }} Jingjie Ding · 基于 <a href="https://pages.github.com/">GitHub Pages</a> 构建 · <a href="mailto:dingjj22@mails.tsinghua.edu.cn">联系我</a></small>
     </footer>
 </body>
 </html>

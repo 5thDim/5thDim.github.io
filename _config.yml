@@ -1,1 +1,20 @@
+title: 5thDim
+description: Jingjie Ding 的个人学术主页，记录高能理论物理相关的学习、研究与思考。
+author: Jingjie Ding
+lang: zh-CN
+timezone: Asia/Shanghai
+
 theme: minima
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      math: true
